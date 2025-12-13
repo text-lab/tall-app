@@ -14,20 +14,20 @@ page-layout: full
 
 Before installing TALL, make sure the following components are correctly set up on your computer:
 
-1.  **Install R**  
-    TALL is built on the R programming language. You must have **R version 4.2.0 or higher** installed.  
+1.  **Install R**\
+    TALL is built on the R programming language. You must have **R version 4.2.0 or higher** installed.\
     👉 Download it from the official <a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN R Project</a>
 
-2.  **(Recommended) Install RStudio**  
-    RStudio is a user-friendly interface for working with R. It is highly recommended for running TALL smoothly.  
+2.  **(Recommended) Install RStudio**\
+    RStudio is a user-friendly interface for working with R. It is highly recommended for running TALL smoothly.\
     👉 Download it from <a href="https://posit.co/download/rstudio/" target="_blank" rel="noopener">Posit RStudio Download</a>
 
-3.  **Ensure an Internet Connection**  
+3.  **Ensure an Internet Connection**\
     An active internet connection is required to install TALL and download its dependencies.
 
-4.  **Install TALL**  
+4.  **Install TALL**\
     You can install TALL using either the stable version from CRAN or the latest development version from GitHub:
-    
+
 ```{=html}
 <div class="container my-5">
   <div class="row">
@@ -38,8 +38,8 @@ Before installing TALL, make sure the following components are correctly set up 
       <p class="text-muted small">
         Official release available on <a href="https://cran.r-project.org/package=tall" target="_blank" rel="noopener">CRAN</a>, updated monthly.
       </p>
-      <pre class="bg-light p-3 rounded text-start"><code>if (!require("pak", quietly = TRUE)) install.packages("pak")
-pak::pkg_install("tall")
+      <pre class="bg-light p-3 rounded text-start"><code>
+install_packages("tall")
 
 # Run TALL
 library(tall)
@@ -60,16 +60,17 @@ tall()</code></pre>
   </p>
   <pre class="bg-light p-3 rounded text-start"><code>if (!require("pak", quietly = TRUE)) install.packages("pak")
 pkgbuild::check_build_tools(debug = TRUE)</code></pre>
-  <p class="text-muted small">
+<br>
     <strong>Note:</strong> If you are using Windows, make sure <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank" rel="noopener">Rtools</a> is installed.  
     For Mac users, install the <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">Xcode Command Line Tools</a>.
   </p>
 
-  <pre class="bg-light p-3 rounded text-start"><code>pak::pkg_install("massimoaria/tall")
+  <pre class="bg-light p-3 rounded text-start"><code>if (!require("remotes", quietly = TRUE)) install.packages("remotes")
+
+remotes::install_github("massimoaria/tall")
 
 # Run TALL
 library(tall)
 tall()</code></pre>
 </div>
-
 ```
