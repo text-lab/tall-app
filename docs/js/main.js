@@ -49,6 +49,68 @@
   document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 })();
 
+// ---- Lightbox (click any figure image to enlarge) ----
+(() => {
+  const targets = document.querySelectorAll('.figure img, .fig-frame img');
+  if (!targets.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Enlarged figure view');
+  overlay.innerHTML = `
+    <button class="lightbox-close" aria-label="Close enlarged view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="lightbox-content">
+      <img alt="">
+      <div class="lightbox-caption"></div>
+    </div>
+    <div class="lightbox-hint">press <kbd>Esc</kbd> or click outside to close</div>
+  `;
+  document.body.appendChild(overlay);
+
+  const imgEl = overlay.querySelector('img');
+  const capEl = overlay.querySelector('.lightbox-caption');
+  const closeBtn = overlay.querySelector('.lightbox-close');
+
+  const open = (src, alt, captionHTML) => {
+    imgEl.src = src;
+    imgEl.alt = alt || '';
+    capEl.innerHTML = captionHTML || '';
+    document.body.classList.add('lightbox-open');
+    requestAnimationFrame(() => overlay.classList.add('open'));
+  };
+
+  const close = () => {
+    overlay.classList.remove('open');
+    setTimeout(() => {
+      document.body.classList.remove('lightbox-open');
+      imgEl.removeAttribute('src');
+      capEl.innerHTML = '';
+    }, 320);
+  };
+
+  targets.forEach(el => {
+    el.addEventListener('click', () => {
+      const fig = el.closest('figure');
+      const cap = fig ? fig.querySelector('.figcaption, figcaption') : null;
+      open(el.currentSrc || el.src, el.alt, cap ? cap.innerHTML : '');
+    });
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target === imgEl || e.target.closest('.lightbox-close')) {
+      close();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+})();
+
 // ---- Copy-to-clipboard ----
 function copyCode(btn) {
   const block = btn.closest('.code-block');
