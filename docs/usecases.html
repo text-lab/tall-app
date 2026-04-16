@@ -1,789 +1,406 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>usecases</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use cases · TALL — worked examples from the paper</title>
+  <meta name="description" content="Four end-to-end worked examples from research: BBC News thematic analysis, US Airline Tweets sentiment detection, bibliometric analysis with bibliometrix, and Wikipedia topic modeling.">
+  <link rel="icon" type="image/png" href="./images/tall-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="nav-fixed quarto-light">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/tall-logo.png" alt="" class="navbar-logo">
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="./images/tall-logo.png" alt="TALL logo">
+      <span class="wordmark">TALL<sup>1.0.0</sup></span>
     </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">TALL</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./features.html"> 
-<span class="menu-text">Features</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tall_ai.html"> 
-<span class="menu-text">TALL AI</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./documentation.html"> 
-<span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./download.html"> 
-<span class="menu-text">Download</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./usecases.html" aria-current="page"> 
-<span class="menu-text">Use Cases</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about_us.html"> 
-<span class="menu-text">About Us</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link active" data-scroll-target="#use-cases">🧪 Use Cases</a></li>
-  <li><a href="#bbc-news" id="toc-bbc-news" class="nav-link" data-scroll-target="#bbc-news">1. 🎬 BBC News</a>
-  <ul class="collapse">
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">📄 Dataset</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">🔍 Workflow</a></li>
-  </ul></li>
-  <li><a href="#bibliometrix-abstracts" id="toc-bibliometrix-abstracts" class="nav-link" data-scroll-target="#bibliometrix-abstracts">2. 📚 Bibliometrix Abstracts</a>
-  <ul class="collapse">
-  <li><a href="#dataset-1" id="toc-dataset-1" class="nav-link" data-scroll-target="#dataset-1">📄 Dataset</a></li>
-  <li><a href="#workflow-1" id="toc-workflow-1" class="nav-link" data-scroll-target="#workflow-1">🔍 Workflow</a></li>
-  </ul></li>
-  <li><a href="#us-airlines-tweets" id="toc-us-airlines-tweets" class="nav-link" data-scroll-target="#us-airlines-tweets">3. ✈️ US Airlines Tweets</a>
-  <ul class="collapse">
-  <li><a href="#dataset-2" id="toc-dataset-2" class="nav-link" data-scroll-target="#dataset-2">📄 Dataset</a></li>
-  <li><a href="#workflow-2" id="toc-workflow-2" class="nav-link" data-scroll-target="#workflow-2">🔍 Workflow</a></li>
-  </ul></li>
-  <li><a href="#wikipedia-pages" id="toc-wikipedia-pages" class="nav-link" data-scroll-target="#wikipedia-pages">4. 🧾 Wikipedia Pages</a>
-  <ul class="collapse">
-  <li><a href="#dataset-3" id="toc-dataset-3" class="nav-link" data-scroll-target="#dataset-3">📄 Dataset</a></li>
-  <li><a href="#workflow-3" id="toc-workflow-3" class="nav-link" data-scroll-target="#workflow-3">🔍 Workflow</a></li>
-  </ul></li>
-  <li><a href="#your-own-use-case" id="toc-your-own-use-case" class="nav-link" data-scroll-target="#your-own-use-case">✨ Your Own Use Case</a></li>
-  </ul>
-</nav>
+    <div class="nav-links">
+      <a href="features.html">Features</a>
+      <a href="tall-ai.html">TALL AI</a>
+      <a href="usecases.html">Use cases</a>
+      <a href="documentation.html">Docs</a>
+      <a href="about.html">About</a>
     </div>
-<!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+    <a href="download.html" class="nav-cta">Install
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" style="display:none">
+    <a href="features.html">Features</a>
+    <a href="tall-ai.html">TALL AI</a>
+    <a href="usecases.html">Use cases</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="download.html">Install</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-rule"></div>
+</nav>
 
-
-
-
-<section id="use-cases" class="level2">
-<h2 class="anchored" data-anchor-id="use-cases">🧪 Use Cases</h2>
-<p>This page showcases practical examples of how <strong>TALL</strong> can be applied to real-world text corpora. Each case follows some phases of TALL workflow — from data import and preprocessing to insight generation and interpretation — enhanced by <strong>TALL AI</strong>.</p>
-<hr>
-</section>
-<section id="bbc-news" class="level2">
-<h2 class="anchored" data-anchor-id="bbc-news">1. 🎬 BBC News</h2>
-<p><strong>Goal</strong><br>
-Explore themes, vocabulary, and summarize information in entertainment news articles from the BBC.</p>
-<section id="dataset" class="level3">
-<h3 class="anchored" data-anchor-id="dataset">📄 Dataset</h3>
-<p>A curated collection of <strong>386 short news stories</strong> from the <em>Entertainment</em> section of BBC News (in English).</p>
-</section>
-<section id="workflow" class="level3">
-<h3 class="anchored" data-anchor-id="workflow">🔍 Workflow</h3>
-<ol type="1">
-<li><strong>Import</strong> the dataset directly from TALL’s built-in sample collections and write a brief description of data in the TALL AI box.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-import.png" alt="bbc import" style="max-width: 90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="2" type="1">
-<li><strong>Preprocess</strong> using English-specific NLP pipeline: Tokenization &amp; PoS tagging using the right language model.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-tok.png" alt="bbc tok" style="max-width: 90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="3" type="1">
-<li><strong>Multi-word</strong> automatically created using the RAKE algorithm. Then, all generated multiwords are included in the dataset.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-mw.png" alt="bbc multi" style="max-width: 90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="4" type="1">
-<li><strong>PoS Selection</strong>, including verbs, nouns, proper nouns, adjectives, and multi-words</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-pos.png" alt="bbc multi" style="max-width: 90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="5" type="1">
-<li><strong>Lexical Exploration</strong> visualizing vocabulary through <strong>wordcloud</strong></li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-wc.png" alt="bbc wc" style="max-width: 90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="6" type="1">
-<li>Use <strong>Word in context</strong> for <code>"million dollar baby"</code> term and ask an to TALL AI an interpretation of results.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-wic.png" alt="bbc wic" style="max-width: 100%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="7" type="1">
-<li><p><strong>Topic Modeling</strong></p>
-<ul>
-<li>Apply <strong>LDA (Latent Dirichlet Allocation)</strong> to detect latent topics and then ask to TALL AI a label for each topic.</li>
-</ul>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-tm.png" alt="bbc tm" style="max-width: 100%; height: auto; margin-top: 1rem;"></p>
-</div></li>
-<li><p><strong>Summarization</strong>, using <strong>TextRank</strong> to generate concise summaries of a document providing the most relevant sentence</p></li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bbc/bbc-textrank.png" alt="bbc textrank" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<hr>
-</section>
-</section>
-<section id="bibliometrix-abstracts" class="level2">
-<h2 class="anchored" data-anchor-id="bibliometrix-abstracts">2. 📚 Bibliometrix Abstracts</h2>
-<p><strong>Goal</strong><br>
-Analyze the conceptual landscape of scientific literature that references the <strong>Bibliometrix</strong> R package.</p>
-<section id="dataset-1" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-1">📄 Dataset</h3>
-<p>A corpus of <strong>444 scientific abstracts</strong> that cite <em>Bibliometrix</em>, enriched with metadata such as <strong>authors</strong>, <strong>publication year</strong>, and <strong>journal name</strong>. The abstracts have already been tokenized and POS tagged using tall.</p>
-</section>
-<section id="workflow-1" class="level3">
-<h3 class="anchored" data-anchor-id="workflow-1">🔍 Workflow</h3>
-<ol type="1">
-<li><strong>Import</strong> the .tall file. If the dataset has already been processed and exported from TALL, re-importing the .tall file will automatically restore the session and display a summary of all previously completed analytical steps.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bibliometrix/bib-import.png" alt="bib import" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="2" type="1">
-<li><strong>Filter</strong> the abstracts to include only article published between <strong>2017 and 2021</strong></li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bibliometrix/bib-filter.png" alt="bib filter" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="3" type="1">
-<li><strong>Lexical and Structural Analysis</strong> performing a <strong>Co-Word network</strong> to detect conceptual clusters and ask to TALL AI the interpretation.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/bibliometrix/bib-cw.png" alt="bib cw" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<div class="text-center">
-<p><img src="images/usecases/bibliometrix/bib-cwai.png" alt="bib cwai" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<hr>
-</section>
-</section>
-<section id="us-airlines-tweets" class="level2">
-<h2 class="anchored" data-anchor-id="us-airlines-tweets">3. ✈️ US Airlines Tweets</h2>
-<p><strong>Goal</strong>: Understand customer feedback and emotional tone in airline-related conversations on Twitter.</p>
-<section id="dataset-2" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-2">📄 Dataset</h3>
-<p>14.640 tweets mentioning major U.S. airlines, collected in February 2015. The dataset includes tweet content, airline names, and metadata such as time and location.</p>
-</section>
-<section id="workflow-2" class="level3">
-<h3 class="anchored" data-anchor-id="workflow-2">🔍 Workflow</h3>
-<ol type="1">
-<li><strong>Import</strong> the raw CSV file directly into TALL</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-import.png" alt="air import" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="2" type="1">
-<li><strong>Preprocess</strong> the corpus using a domain-specific PoS tagging model trained on social media language</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-tok.png" alt="air tok" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="3" type="1">
-<li><strong>Tag special entities</strong> such as <code>@mentions</code>, <code>#hashtags</code>, and emojis for semantic enrichment</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-tse.png" alt="air tse" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="4" type="1">
-<li><strong>Build an Ego Network</strong> around <strong>#fail</strong> hashtag, to identify co-occurring complaint patterns</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-wic.png" alt="air wic" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="5" type="1">
-<li><strong>Perform Sentiment Analysis</strong> using the NRC Emotion Lexicon to detect emotional polarity and dominant sentiments (e.g., anger, trust, fear)</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-pol.png" alt="air pol" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<div class="text-center">
-<p><img src="images/usecases/airline/air-polai.png" alt="air polai" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<hr>
-</section>
-</section>
-<section id="wikipedia-pages" class="level2">
-<h2 class="anchored" data-anchor-id="wikipedia-pages">4. 🧾 Wikipedia Pages</h2>
-<p><strong>Goal</strong>: Discover sub-themes and semantic structures within machine learning content.</p>
-<section id="dataset-3" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-3">📄 Dataset</h3>
-<p>A collection of 15 Wikipedia pages related to <strong>machine learning</strong>, retrieved directly via TALL’s import interface.</p>
-</section>
-<section id="workflow-3" class="level3">
-<h3 class="anchored" data-anchor-id="workflow-3">🔍 Workflow</h3>
-<ol type="1">
-<li><strong>Import Wikipedia articles</strong> from the integrated TALL module about <code>machine learning</code>.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-import.png" alt="wiki import" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="2" type="1">
-<li><strong>Generate multi-word expressions</strong> using the RAKE algorithm to extract domain-relevant collocations.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-mw.png" alt="wiki mw" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="3" type="1">
-<li><strong>Explore lexical insights</strong>, including document and sentence length, word frequency distribution, and wordcloud.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-ov.png" alt="wiki overview" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="4" type="1">
-<li><strong>Build a co-word network</strong> to visualize thematic associations, with <strong>TALL AI</strong> support for identifying latent sub-themes in machine learning discourse.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-cw.png" alt="wiki cw" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<ol start="5" type="1">
-<li><strong>Apply topic modeling (LDA)</strong> to extract six key topics and their representative terms, enriched by <strong>TALL AI</strong> interpretation and summary.</li>
-</ol>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-tm.png" alt="wiki tm" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<div class="text-center">
-<p><img src="images/usecases/wiki/wiki-tmai.png" alt="wiki tmai" style="max-width:90%; height: auto; margin-top: 1rem;"></p>
-</div>
-<hr>
-</section>
-</section>
-<section id="your-own-use-case" class="level2">
-<h2 class="anchored" data-anchor-id="your-own-use-case">✨ Your Own Use Case</h2>
-<p>TALL is flexible and scalable for use in:</p>
-<ul>
-<li>Social science research<br>
-</li>
-<li>Digital humanities<br>
-</li>
-<li>Public policy analysis<br>
-</li>
-<li>Journalism and media studies<br>
-</li>
-<li>Education and learning analytics<br>
-</li>
-<li>Marketing and brand sentiment monitoring</li>
-</ul>
-<p>Have a use case to share? <a href="https://github.com/massimoaria/tall">Contribute on GitHub</a> or get in touch via the <a href="./about_us.html">About page</a>.</p>
-
-
+<!-- HERO -->
+<section class="hero" style="padding-bottom: clamp(3rem, 6vw, 4rem);">
+  <div class="container-narrow text-center">
+    <span class="kicker fade-in" style="margin: 0 auto;">Use cases</span>
+    <h1 class="display-xl mt-4 fade-in">
+      Four corpora.<br>
+      <em class="italic-display" style="font-weight:400; color:var(--tall-deep)">One&nbsp;workflow</em>.
+    </h1>
+    <p class="lede mt-6 fade-in fade-in-delay-1">
+      Four worked examples drawn from the paper and supplementary materials — thematic analysis of news, sentiment detection on social media, science mapping of academic literature, and topic modeling of encyclopedic text. All executed end‑to‑end in TALL, without writing code.
+    </p>
+  </div>
 </section>
 
-</main> <!-- /main -->
-<footer class="site-footer">
+<!-- INDEX -->
+<section class="section-tight" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="grid grid-4">
+      <a href="#bbc" class="card fade-in" style="text-decoration:none">
+        <div class="eyebrow" style="color: var(--tall-deep);">01 · Journalism</div>
+        <h3 class="mt-2" style="font-family: var(--font-display); font-size:1.15rem; font-variation-settings:'opsz' 30; color: var(--ink);">BBC News</h3>
+        <p class="mt-2 small">Thematic analysis · 386 stories · EN GUM model</p>
+      </a>
+      <a href="#airline" class="card fade-in fade-in-delay-1" style="text-decoration:none">
+        <div class="eyebrow" style="color: var(--tall-deep);">02 · Social media</div>
+        <h3 class="mt-2" style="font-family: var(--font-display); font-size:1.15rem; font-variation-settings:'opsz' 30; color: var(--ink);">US Airline Tweets</h3>
+        <p class="mt-2 small">Sentiment detection · 14,640 tweets · 6 airlines</p>
+      </a>
+      <a href="#bibliometrix" class="card fade-in fade-in-delay-2" style="text-decoration:none">
+        <div class="eyebrow" style="color: var(--tall-deep);">03 · Science mapping</div>
+        <h3 class="mt-2" style="font-family: var(--font-display); font-size:1.15rem; font-variation-settings:'opsz' 30; color: var(--ink);">bibliometrix</h3>
+        <p class="mt-2 small">Scientific abstracts · co‑word analysis</p>
+      </a>
+      <a href="#wiki" class="card fade-in fade-in-delay-3" style="text-decoration:none">
+        <div class="eyebrow" style="color: var(--tall-deep);">04 · Reference</div>
+        <h3 class="mt-2" style="font-family: var(--font-display); font-size:1.15rem; font-variation-settings:'opsz' 30; color: var(--ink);">Wikipedia</h3>
+        <p class="mt-2 small">Topic modeling · encyclopedic corpus</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 1: BBC NEWS -->
+<section id="bbc">
+  <div class="container">
+    <div class="grid grid-12" style="gap: 3rem; align-items: start;">
+      <div style="grid-column: span 4;" class="fade-in">
+        <span class="kicker">Case · 01</span>
+        <h2 class="display-lg mt-4">
+          <em class="italic-display" style="font-weight:400">Thematic</em> analysis on <span style="white-space:nowrap">BBC News</span>.
+        </h2>
+        <p class="mt-6">
+          A collection of 386 short news articles from the BBC News corpus, retrieved from the BBC website (Greene &amp; Cunningham, 2005). After loading, TALL applies standard pre‑processing — tokenisation and lemmatisation via the <em>EN GUM</em> model — retaining adjectives, nouns, proper nouns, and verbs.
+        </p>
+        <div class="flex gap-3 mt-4" style="flex-wrap: wrap;">
+          <span class="pill">English</span>
+          <span class="pill">GUM model</span>
+          <span class="pill">386 docs</span>
+          <span class="pill">Louvain</span>
+        </div>
+      </div>
+
+      <div style="grid-column: span 8;" class="fade-in fade-in-delay-1">
+        <figure class="figure">
+          <img src="./paper/network_mod.png" alt="Community detection on BBC News corpus">
+          <figcaption class="figcaption"><strong>Figure · Network</strong> Five dense sub‑graphs from community detection on the entertainment sub‑corpus: Awards, Music, Industry, Media, General News.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Workflow steps -->
+    <div class="mt-12">
+      <div class="grid grid-3 fade-in">
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 1 · Import</div>
+          <p class="mt-2 small">Built‑in <em>BBC News</em> dataset loaded with TALL AI context automatically populated.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-import.png" alt="BBC News import"></div>
+        </div>
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 2 · Tokenise &amp; PoS</div>
+          <p class="mt-2 small">EN GUM model selected. Adjectives, nouns, proper nouns, verbs retained.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-tok.png" alt="Tokenisation"></div>
+        </div>
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 3 · Multi‑word</div>
+          <p class="mt-2 small">RAKE extracts salient collocations; manual curation preserves domain phrases.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-mw.png" alt="Multi-words"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-8 fade-in fade-in-delay-1">
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 4 · Overview</div>
+          <p class="mt-2 small">Descriptive statistics, lexical richness, and TF‑IDF for discriminating terms.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-wc.png" alt="Word cloud"></div>
+        </div>
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 5 · Words in Context</div>
+          <p class="mt-2 small">Concordance view surfaces co‑text environments for salient terms.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-wic.png" alt="Words in context"></div>
+        </div>
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">Step 6 · Topic modeling</div>
+          <p class="mt-2 small">LDA recovers thematic structure across the full news collection.</p>
+          <div class="fig-frame mt-3"><img src="./images/usecases/bbc/bbc-tm.png" alt="Topic modeling"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TALL AI insight -->
+    <div class="mt-12 fade-in">
+      <div style="padding: 2rem; border-radius: 8px; background: var(--paper-warm); border-left: 3px solid var(--tall-deep); max-width: 46em; margin: 0 auto;">
+        <div class="eyebrow" style="color: var(--tall-deep);">TALL AI · Interpretation</div>
+        <p class="mt-2" style="font-family: var(--font-display); font-size: 1.15rem; font-style: italic; font-variation-settings: 'opsz' 30; color: var(--ink); line-height: 1.5;">
+          "The entertainment news focuses heavily on film awards and the movie industry. Music‑related news forms a significant portion of the content — organised around performance, industry and sales."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 2: US AIRLINE TWEETS -->
+<section id="airline" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="grid grid-12" style="gap: 3rem; align-items: start;">
+      <div style="grid-column: span 8;" class="fade-in">
+        <figure class="figure">
+          <img src="./paper/sentiment_mod.png" alt="Polarity analysis on US Airline Tweets">
+          <figcaption class="figcaption"><strong>Figure · Polarity</strong> Top word distributions by polarity category. Negative tweets cluster around service disruptions (<em>delay</em>, <em>cancel</em>, <em>miss</em>) while positive tweets express gratitude (<em>thank</em>, <em>appreciate</em>).</figcaption>
+        </figure>
+      </div>
+      <div style="grid-column: span 4;" class="fade-in fade-in-delay-1">
+        <span class="kicker">Case · 02</span>
+        <h2 class="display-lg mt-4">
+          <em class="italic-display" style="font-weight:400">Sentiment</em> on<br>airline tweets.
+        </h2>
+        <p class="mt-6">
+          14,640 tweets directed at six major US airlines during February 2015 (Figure Eight / Kaggle). TALL detects platform‑specific entities — hashtags, mentions, emojis — and runs polarity detection via the Hu‑Liu opinion lexicon.
+        </p>
+        <div class="grid grid-2 mt-6" style="gap: .8rem;">
+          <div><div class="stat-num" style="font-size: 2rem;">127</div><div class="small">unique emojis</div></div>
+          <div><div class="stat-num" style="font-size: 2rem;">1.9k</div><div class="small">hashtags</div></div>
+          <div><div class="stat-num" style="font-size: 2rem;">930</div><div class="small">mentions</div></div>
+          <div><div class="stat-num" style="font-size: 2rem;">28%</div><div class="small">negative sentiment</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-3 mt-12 fade-in">
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 1 · Import</div>
+        <p class="mt-2 small">Built‑in corpus loaded; TALL AI receives pre‑populated dataset context.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-import.png" alt="Import"></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 2 · EWT tokenisation</div>
+        <p class="mt-2 small">EN EWT model handles social‑media text. Hashtags, mentions, emojis retained as entities.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-tok.png" alt="Tokenisation"></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 3 · Special entities</div>
+        <p class="mt-2 small">Automatic tagging of hashtags, mentions, emojis with frequency ranking.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-tse.png" alt="Special entities"></div>
+      </div>
+    </div>
+
+    <div class="grid grid-3 mt-8 fade-in fade-in-delay-1">
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 4 · Words in Context</div>
+        <p class="mt-2 small">Concordance for <code>@AmericanAirlines</code> reveals customer‑service discourse patterns.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-wic.png" alt="Words in context"></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 5 · Polarity</div>
+        <p class="mt-2 small">Hu‑Liu lexicon · donut chart with five levels from Very Negative to Very Positive.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-pol.png" alt="Polarity"></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color: var(--amber);">Step 6 · TALL AI</div>
+        <p class="mt-2 small">Automated key takeaways &amp; managerial implications.</p>
+        <div class="fig-frame mt-3"><img src="./images/usecases/airline/air-polai.png" alt="AI polarity interpretation"></div>
+      </div>
+    </div>
+
+    <div class="mt-12 fade-in">
+      <div style="padding: 2rem; border-radius: 8px; background: var(--surface); border-left: 3px solid var(--tall-deep); max-width: 50em; margin: 0 auto;">
+        <div class="eyebrow" style="color: var(--tall-deep);">TALL AI · Key takeaways</div>
+        <p class="mt-2" style="font-family: var(--font-display); font-size: 1.15rem; font-style: italic; font-variation-settings: 'opsz' 30; color: var(--ink); line-height: 1.5;">
+          "The dominance of <em>delay</em> and <em>cancel</em> in negative tweets suggests airlines should focus on improving their processes for handling flight disruptions. Both positive and negative tweets highlight the importance of customer service — the presence of gratitude‑related terms in positive sentiment indicates that effective customer service responses can mitigate dissatisfaction and generate positive outcomes."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 3: BIBLIOMETRIX -->
+<section id="bibliometrix">
+  <div class="container">
+    <div class="grid grid-12" style="gap: 3rem; align-items: start;">
+      <div style="grid-column: span 5;" class="fade-in">
+        <span class="kicker">Case · 03</span>
+        <h2 class="display-lg mt-4">
+          <em class="italic-display" style="font-weight:400">Science&nbsp;mapping</em> from abstracts.
+        </h2>
+        <p class="mt-6">
+          TALL natively ingests <em>biblioshiny</em> files from the <a href="https://bibliometrix.org" target="_blank" rel="noopener">bibliometrix</a> package. Scientific abstracts flow into the same pre‑processing pipeline — multilingual tokenisation, lemmatisation, co‑word analysis — and can be layered with citation‑based metrics for hybrid semantic/bibliometric analysis.
+        </p>
+        <p>
+          A natural fit for systematic literature reviews, conceptual‑structure analyses, and policy‑oriented research synthesis.
+        </p>
+        <div class="flex gap-3 mt-4" style="flex-wrap: wrap;">
+          <span class="pill">biblioshiny import</span>
+          <span class="pill">co‑word analysis</span>
+          <span class="pill">citation filters</span>
+        </div>
+      </div>
+      <div style="grid-column: span 7;" class="fade-in fade-in-delay-1">
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="fig-frame"><img src="./images/usecases/bibliometrix/bib-import.png" alt="Bibliometrix import"></div>
+          <div class="fig-frame"><img src="./images/usecases/bibliometrix/bib-filter.png" alt="Bibliometrix filter"></div>
+          <div class="fig-frame"><img src="./images/usecases/bibliometrix/bib-cw.png" alt="Bibliometrix co-word analysis"></div>
+          <div class="fig-frame"><img src="./images/usecases/bibliometrix/bib-cwai.png" alt="Bibliometrix AI interpretation"></div>
+        </div>
+        <p class="figcaption mt-4"><strong>Figure · Bibliometrix</strong> Biblioshiny ingestion, corpus filtering, co‑word analysis, and TALL AI interpretation of the emerging conceptual structure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 4: WIKIPEDIA -->
+<section id="wiki" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="grid grid-12" style="gap: 3rem; align-items: start;">
+      <div style="grid-column: span 7;" class="fade-in">
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="fig-frame"><img src="./images/usecases/wiki/wiki-import.png" alt="Wikipedia import"></div>
+          <div class="fig-frame"><img src="./images/usecases/wiki/wiki-ov.png" alt="Wikipedia overview"></div>
+          <div class="fig-frame"><img src="./images/usecases/wiki/wiki-mw.png" alt="Wikipedia multiwords"></div>
+          <div class="fig-frame"><img src="./images/usecases/wiki/wiki-cw.png" alt="Wikipedia co-word"></div>
+          <div class="fig-frame" style="grid-column: span 2;"><img src="./images/usecases/wiki/wiki-tm.png" alt="Wikipedia topic modeling"></div>
+        </div>
+        <p class="figcaption mt-4"><strong>Figure · Wikipedia</strong> An encyclopedic corpus processed through import, overview, multi‑word extraction, co‑word analysis, and topic modeling — ending with TALL AI's topic interpretation.</p>
+      </div>
+      <div style="grid-column: span 5;" class="fade-in fade-in-delay-1">
+        <span class="kicker">Case · 04</span>
+        <h2 class="display-lg mt-4">
+          <em class="italic-display" style="font-weight:400">Topic discovery</em> on Wikipedia.
+        </h2>
+        <p class="mt-6">
+          An encyclopedic corpus pushes TALL through the full analytical narrative: from basic frequency and TF‑IDF to multi‑word extraction, co‑word networks, and finally LDA topic modeling with TALL AI producing concise narrative labels for each topic.
+        </p>
+        <p>
+          Ideal for digital humanities, educational‑content audits, and cross‑linguistic cultural analysis given TALL's 56‑language coverage.
+        </p>
+        <div class="flex gap-3 mt-4" style="flex-wrap: wrap;">
+          <span class="pill">topic modeling</span>
+          <span class="pill">co‑occurrence</span>
+          <span class="pill">multi‑word</span>
+          <span class="pill">AI topic labels</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH DOMAINS -->
+<section>
+  <div class="container">
+    <div class="text-center mb-12" style="max-width: 48em; margin: 0 auto;">
+      <span class="kicker fade-in">§ · Where TALL is used</span>
+      <h2 class="display-lg mt-4 fade-in">
+        Across disciplines where <em class="italic-display" style="font-weight:400">text is evidence</em>.
+      </h2>
+    </div>
+
+    <div class="grid grid-3 mt-8">
+      <div class="card fade-in">
+        <div class="eyebrow" style="color: var(--tall-deep);">Social &amp; political sciences</div>
+        <p class="mt-3">Large‑scale thematic and sentiment analyses of institutional reports, parliamentary proceedings, and online debates.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <div class="eyebrow" style="color: var(--tall-deep);">Digital humanities</div>
+        <p class="mt-3">Multilingual architecture for cross‑linguistic <em>corpus</em> studies and computational cultural analysis across 56 languages.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <div class="eyebrow" style="color: var(--tall-deep);">Bibliometrics</div>
+        <p class="mt-3">Integration with <em>bibliometrix</em> combines semantic and citation‑based analyses for science mapping and literature reviews.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="eyebrow" style="color: var(--tall-deep);">Healthcare research</div>
+        <p class="mt-3">Analyses of patient feedback, clinical records and satisfaction surveys (Valentino et al., 2025).</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <div class="eyebrow" style="color: var(--tall-deep);">Education</div>
+        <p class="mt-3">Currently used in postgraduate and doctoral programs at several Italian universities for teaching data‑driven text methods.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <div class="eyebrow" style="color: var(--tall-deep);">Industry &amp; market research</div>
+        <p class="mt-3">Sentiment tracking and theme discovery across customer feedback, reviews, and social media at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-tight" style="background: var(--ink); color: var(--paper);">
   <div class="container text-center">
-    © 2025 K-Synth Srl, Academic Spin-Off of the University of Naples Federico II. All Rights Reserved.
+    <h2 class="display-md" style="color: var(--paper);">
+      Your corpus is <em class="italic-display" style="font-weight:400; color: var(--tall)">next</em>.
+    </h2>
+    <div class="flex gap-4 justify-center mt-8" style="flex-wrap: wrap;">
+      <a href="download.html" class="btn" style="background: var(--tall); color: var(--ink); border:0;">Install TALL</a>
+      <a href="documentation.html" class="btn" style="background: transparent; color: var(--paper); border: 1px solid rgba(250,247,239,.3);">Read the tutorial</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-title">TALL</div>
+        <span class="footer-sub">Text Analysis for All · v1.0.0</span>
+        <p class="mt-6" style="color: rgba(250,247,239,.6); max-width: 28em; font-size: .92rem;">An open‑source R‑Shiny application developed by K‑Synth and academic partners, for reproducible text analytics without code.</p>
+      </div>
+      <div><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="tall-ai.html">TALL AI</a></li>
+        <li><a href="usecases.html">Use cases</a></li>
+        <li><a href="download.html">Install</a></li>
+      </ul></div>
+      <div><h4>Research</h4><ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="index.html#paper">Paper</a></li>
+        <li><a href="https://cran.r-project.org/package=tall" target="_blank" rel="noopener">CRAN</a></li>
+        <li><a href="https://github.com/massimoaria/tall" target="_blank" rel="noopener">GitHub</a></li>
+      </ul></div>
+      <div><h4>Team</h4><ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="mailto:aria@unina.it">Contact</a></li>
+        <li><a href="https://www.k-synth.com" target="_blank" rel="noopener">K‑Synth</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-meta">
+      <div>© 2026 K‑Synth Srl · Academic Spin‑Off of the University of Naples Federico&nbsp;II. Released under the MIT License.</div>
+      <div class="flex gap-4">
+        <a href="https://github.com/massimoaria/tall" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.4.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        </a>
+        <a href="mailto:aria@unina.it" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
 
-
-
-
-</body></html>
+<script src="js/main.js"></script>
+</body>
+</html>

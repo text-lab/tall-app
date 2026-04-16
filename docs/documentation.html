@@ -1,672 +1,298 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>documentation</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation · TALL — paper, tutorials, and release notes</title>
+  <meta name="description" content="TALL documentation: the SoftwareX paper, supplementary material, 200+ tutorial slides, changelog and release notes.">
+  <link rel="icon" type="image/png" href="./images/tall-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="nav-fixed quarto-light">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/tall-logo.png" alt="" class="navbar-logo">
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="./images/tall-logo.png" alt="TALL logo">
+      <span class="wordmark">TALL<sup>1.0.0</sup></span>
     </a>
+    <div class="nav-links">
+      <a href="features.html">Features</a>
+      <a href="tall-ai.html">TALL AI</a>
+      <a href="usecases.html">Use cases</a>
+      <a href="documentation.html">Docs</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="download.html" class="nav-cta">Install
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">TALL</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./features.html"> 
-<span class="menu-text">Features</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tall_ai.html"> 
-<span class="menu-text">TALL AI</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./documentation.html" aria-current="page"> 
-<span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./download.html"> 
-<span class="menu-text">Download</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./usecases.html"> 
-<span class="menu-text">Use Cases</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about_us.html"> 
-<span class="menu-text">About Us</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+  <div class="mobile-menu" style="display:none">
+    <a href="features.html">Features</a>
+    <a href="tall-ai.html">TALL AI</a>
+    <a href="usecases.html">Use cases</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="download.html">Install</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-rule"></div>
+</nav>
 
-
-
-
-<section id="documentation" class="level1">
-<h1>📖 Documentation</h1>
-<p>To gain a detailed understanding of how <strong>TALL</strong> works — including its structure, analytical workflow, and the methods it incorporates — we recommend consulting the official tutorial.</p>
-<p>This tutorial includes <strong>over 200 slides</strong> that explain in depth:</p>
-<ul>
-<li>The logic behind each module<br>
-</li>
-<li>The preprocessing steps and NLP techniques used<br>
-</li>
-<li>The statistical and semantic methods available (e.g., LDA, CA, clustering, polarity detection)<br>
-</li>
-<li>Example outputs and interpretation strategies</li>
-</ul>
-<p>👉 <a href="https://www.k-synth.com/tall/TALL_tutorial.html" target="_blank" rel="noopener">Access the full TALL tutorial slides</a></p>
-<div class="text-center">
-<p><img src="images/documentation/tall-slides.png" alt="TALL slides" style="max-width: 100%; height: auto; margin-top: 1rem;"></p>
-</div>
-<!-- This section offers a step-by-step guide to using **TALL**: from installation and preprocessing to analysis, AI support, and export options. -->
-<!-- --- -->
-<!-- ## 1. 🛠️ Installation -->
-<!-- TALL is an R package with an embedded Shiny interface. -->
-<!-- ### Requirements -->
-<!-- - R ≥ 4.2.0   -->
-<!-- - Recommended: RStudio -->
-<!-- ### Installation -->
-<!-- #### Official release -->
-<!-- You can install the official release of TALL from the Comprehensive R Archive Network CRAN and updated monthly. -->
-<!-- > if (!require("pak", quietly=TRUE)) install.packages("pak")\ -->
-<!-- > pak::pkg_install("tall") -->
-<!-- #### Development release -->
-<!-- If you want access to the most recent features and updates not yet available on CRAN, you can install the development version directly from our GitHub repository with: -->
-<!-- > if (!require("pak", quietly=TRUE)) install.packages("pak")\ -->
-<!-- > pak::pkg_install("massimoaria/tall") -->
-<!-- #### Launch the app: -->
-<!-- > tall::tall() -->
-<!-- --- -->
-<!-- ## 2. 📂 Load or Import Data -->
-<!-- Users can: -->
-<!-- - Import `.txt`, `.csv`, `.bib`, `.xlsx`, `.json` -->
-<!-- - Resume previous sessions from `.tall` files -->
-<!-- - Use sample datasets (e.g., BBC, Bibliometrix, Tweets) -->
-<!-- - Import directly from **Biblioshiny** -->
-<!-- - Load Wikipedia pages -->
-<!-- ![Importing data in TALL](img/load-data.png) -->
-<!-- --- -->
-<!-- ## 3. ⚙️ Initial Setup -->
-<!-- On the first launch, TALL will prompt you to set a **working folder**. -->
-<!-- All files and results will be saved here, and settings are retained across sessions. -->
-<!-- ![Working folder configuration](img/working-folder.png) -->
-<!-- --- -->
-<!-- ## 4. 🔧 Preprocessing Pipeline -->
-<!-- TALL includes a complete preprocessing workflow: -->
-<!-- - Tokenization and normalization   -->
-<!-- - Lemmatization & PoS-tagging using **UD v2.15** -->
-<!-- - Special entity recognition   -->
-<!-- - Multi-word and custom-term tagging -->
-<!-- Supports **57 languages**, with **87 models** including domain-specific variants (e.g., social, news). -->
-<!-- ![Preprocessing panel](img/preprocessing-panel.png) -->
-<!-- --- -->
-<!-- ## 5. 📊 Exploratory Lexical Analysis -->
-<!-- Explore: -->
-<!-- - Term frequencies   -->
-<!-- - Vocabulary metrics and indexes   -->
-<!-- - Wordclouds   -->
-<!-- - Keyword-in-context (KWIC)   -->
-<!-- - Semantic ego networks -->
-<!-- ![KWIC interface](img/kwic-interface.png) -->
-<!-- --- -->
-<!-- ## 6. 🔍 Topic Detection & Clustering -->
-<!-- Choose between: -->
-<!-- - **LCA** (Lexical Correspondence Analysis)   -->
-<!-- - **Hierarchical clustering** (Tandem Analysis)   -->
-<!-- - **Reinert clustering**   -->
-<!-- - **Latent Dirichlet Allocation (LDA)** -->
-<!-- Adjust clustering parameters and visualize outputs: -->
-<!-- ![LCA plot and dendrogram](img/lca-dendrogram.png) -->
-<!-- --- -->
-<!-- ## 7. 🌐 Co-occurrence & Network Analysis -->
-<!-- Build and explore: -->
-<!-- - Term-Term networks   -->
-<!-- - Document-Document matrices   -->
-<!-- - Apply filters, compute modularity, detect communities -->
-<!-- ![Network analysis example](img/network-analysis.png) -->
-<!-- --- -->
-<!-- ## 8. 😊 Sentiment & Polarity Detection -->
-<!-- Choose from: -->
-<!-- - Hu & Liu   -->
-<!-- - Loughran-McDonald (finance)   -->
-<!-- - NRC Emotion Lexicon -->
-<!-- Context-aware scores include valence shifters (negators, amplifiers...). -->
-<!-- ![Polarity distribution](img/polarity-plot.png) -->
-<!-- --- -->
-<!-- ## 9. 🧾 Summarization -->
-<!-- Summarize texts using **TextRank**: -->
-<!-- - Graph-based ranking of sentences -->
-<!-- - Adjustable length   -->
-<!-- - Highlighted relevance per sentence -->
-<!-- ![Text summarization example](img/summarization.png) -->
-<!-- --- -->
-<!-- ## 10. 🤖 TALL AI (Optional) -->
-<!-- Activate the built-in **TALL AI** assistant: -->
-<!-- - Interprets patterns in clustering, LDA, sentiment, and networks -->
-<!-- - Suggests labels, explanations, and critical insights -->
-<!-- - Integrates via [Google Gemini API](https://makersuite.google.com/) -->
-<!-- ![TALL AI assistant interface](img/tall-ai-insight.png) -->
-<!-- See the [TALL AI page](tall-ai.qmd) for full details. -->
-<!-- --- -->
-<!-- ## 11. 📤 Export & Save -->
-<!-- You can: -->
-<!-- - Export to Excel or PNG   -->
-<!-- - Save current progress as a `.tall` file   -->
-<!-- - Add results to a cumulative report -->
-<!-- ![Export options](img/export-menu.png) -->
-<!-- --- -->
-<!-- ## 12. ❓ Help & Support -->
-<!-- - Use the **Info & References** tabs in every module   -->
-<!-- - Consult this documentation anytime   -->
-<!-- - Contact the authors via the [About](about.qmd) page   -->
-<!-- - Visit [GitHub](https://github.com/massimoaria/tall) for updates -->
-<!-- > TALL makes powerful text analysis accessible — now with the guidance of AI. -->
-
-
+<!-- HERO -->
+<section class="hero" style="padding-bottom: clamp(3rem, 5vw, 4rem);">
+  <div class="container-narrow text-center">
+    <span class="kicker fade-in" style="margin: 0 auto;">Documentation</span>
+    <h1 class="display-xl mt-4 fade-in">
+      Everything, <em class="italic-display" style="font-weight:400; color:var(--tall-deep)">written&nbsp;down</em>.
+    </h1>
+    <p class="lede mt-6 fade-in fade-in-delay-1">
+      The SoftwareX paper, supplementary material, tutorial slide deck, and release notes — everything you need to use TALL rigorously and cite it correctly.
+    </p>
+  </div>
 </section>
 
-</main> <!-- /main -->
-<footer class="site-footer">
+<!-- PAPER / SUPP MATERIAL -->
+<section style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="grid grid-2" style="gap: 2rem; align-items: stretch;">
+      <!-- Paper -->
+      <div class="fade-in" style="display:flex; flex-direction:column; background: var(--surface); border:1px solid var(--rule); border-radius: 10px; padding: 2rem;">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="badge badge-ink">Peer‑reviewed · 2026</span>
+        </div>
+        <h2 class="display-sm">The SoftwareX paper</h2>
+        <p class="lede mt-3" style="font-size: 1.05rem; font-variation-settings: 'opsz' 30;">
+          Aria, Spano, D'Aniello, Cuccurullo, Misuraca — <em>TALL: Text Analysis for All — an interactive R‑Shiny application for exploring, modeling, and visualizing textual data.</em>
+        </p>
+        <p class="mt-3">
+          Introduces the architecture, details every analytical module, and benchmarks performance across corpora spanning four orders of magnitude. Open‑access, reproducible, and the primary reference for citing TALL.
+        </p>
+        <div style="margin-top:auto; padding-top: 1.5rem;">
+          <a href="index.html#paper" class="btn btn-primary" style="width:100%; justify-content:center;">
+            Read the citation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Supp -->
+      <div class="fade-in fade-in-delay-1" style="display:flex; flex-direction:column; background: var(--surface); border:1px solid var(--rule); border-radius: 10px; padding: 2rem;">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="badge badge-soft">Supplementary material</span>
+        </div>
+        <h2 class="display-sm">Supplementary material</h2>
+        <p class="lede mt-3" style="font-size: 1.05rem; font-variation-settings: 'opsz' 30;">
+          Dependencies list, FAIR audit, architecture diagram, benchmark protocol, and a full step‑by‑step worked example on the US Airline Tweets corpus.
+        </p>
+        <ul class="mt-3" style="list-style:none; padding:0;">
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· A — Complete R package dependency list</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· B — FAIR principles compliance audit</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· C — Software architecture deep dive</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· D — Computational performance benchmarks</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· E — Adoption &amp; CRAN download analytics</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft); border-bottom:1px solid var(--rule-soft);">· F — Step‑by‑step example workflow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TUTORIAL SLIDES -->
+<section>
+  <div class="container">
+    <div class="grid grid-12" style="gap: 3rem; align-items: center;">
+      <div style="grid-column: span 5;" class="fade-in">
+        <span class="kicker">§ 1 · Learn</span>
+        <h2 class="display-lg mt-4">
+          <em class="italic-display" style="font-weight:400">200+ slides</em><br>
+          of hands‑on tutorial.
+        </h2>
+        <p class="mt-6">
+          The official TALL tutorial walks through every module in depth — the logic behind each analytical choice, preprocessing steps, statistical and semantic methods, and interpretation strategies with worked examples.
+        </p>
+        <ul class="mt-4" style="list-style:none; padding:0;">
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· Module‑by‑module walkthrough</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· Pre‑processing &amp; NLP technique deep dives</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft);">· LDA, CA, clustering, polarity detection</li>
+          <li style="padding:.5rem 0; border-top:1px solid var(--rule-soft); border-bottom:1px solid var(--rule-soft);">· Example outputs &amp; interpretation strategies</li>
+        </ul>
+        <a href="https://www.k-synth.com/tall/TALL_tutorial.html" target="_blank" rel="noopener" class="btn btn-leaf mt-6">
+          Open the tutorial
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div style="grid-column: span 7;" class="fade-in fade-in-delay-1">
+        <figure class="figure">
+          <img src="./images/documentation/tall-slides.png" alt="TALL tutorial slide deck preview">
+          <figcaption class="figcaption"><strong>Figure</strong> Preview of the 200‑slide tutorial deck hosted at <code>k‑synth.com/tall</code>.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELEASE NOTES -->
+<section style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="text-center mb-12" style="max-width: 50em; margin: 0 auto;">
+      <span class="kicker fade-in" style="margin: 0 auto;">§ 2 · Release notes</span>
+      <h2 class="display-lg mt-4 fade-in">
+        <em class="italic-display" style="font-weight:400">v1.0.0</em> changelog.
+      </h2>
+      <p class="lede mt-4 fade-in fade-in-delay-1">The milestone release accompanying the SoftwareX publication.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card fade-in">
+        <span class="badge badge-new">New</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">SVO triplets extraction</h3>
+        <p class="mt-2">Subject‑Verb‑Object structures from dependency trees.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <span class="badge badge-new">New</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Syntactic complexity</h3>
+        <p class="mt-2">Metrics for measuring sentence construction across documents.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <span class="badge badge-new">New</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">NRC emotion analysis</h3>
+        <p class="mt-2">Eight‑dimensional emotion detection: anger, anticipation, disgust, fear, joy, sadness, surprise, trust.</p>
+      </div>
+      <div class="card fade-in">
+        <span class="badge badge-new">New</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Noun phrase extraction</h3>
+        <p class="mt-2">Identify and rank noun phrases to complement single‑word analysis.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <span class="badge badge-updated">Updated</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Topic modeling</h3>
+        <p class="mt-2">CTM, STM, automatic K selection, coherence &amp; exclusivity diagnostics.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <span class="badge badge-updated">Updated</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Network analysis</h3>
+        <p class="mt-2">Dependency‑based word networks with syntactic relation filters.</p>
+      </div>
+      <div class="card fade-in">
+        <span class="badge badge-updated">Updated</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Image export</h3>
+        <p class="mt-2">DPI‑aware rendering for publication‑quality figures.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <span class="badge badge-updated">Updated</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">TALL AI integration</h3>
+        <p class="mt-2">Multiple Gemini model variants; Medium (16k) and Large (32k) context windows.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <span class="badge badge-updated">Updated</span>
+        <h3 class="mt-4" style="font-family: var(--font-display); font-size: 1.2rem; font-variation-settings:'opsz' 30;">Reproducibility pipeline</h3>
+        <p class="mt-2">Cumulative XLSX report export and session state persistence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section>
+  <div class="container">
+    <div class="text-center mb-12">
+      <span class="kicker fade-in" style="margin: 0 auto;">§ 3 · Resources</span>
+      <h2 class="display-lg mt-4 fade-in">All the <em class="italic-display" style="font-weight:400">links</em>, in one place.</h2>
+    </div>
+
+    <div class="grid grid-4 mt-8">
+      <a href="https://cran.r-project.org/package=tall" target="_blank" rel="noopener" class="card fade-in" style="text-decoration:none;">
+        <div style="width:42px; height:42px; border-radius: 8px; background: var(--tall-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 1rem;">
+          <span style="font-family: var(--font-display); font-weight:700; color: var(--tall-deep); font-size: 1.1rem;">R</span>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-variation-settings:'opsz' 30;">CRAN</h3>
+        <p class="mt-2 small">Official stable release · metadata · archive</p>
+      </a>
+      <a href="https://github.com/massimoaria/tall" target="_blank" rel="noopener" class="card fade-in fade-in-delay-1" style="text-decoration:none;">
+        <div style="width:42px; height:42px; border-radius: 8px; background: var(--tall-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 1rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--tall-deep)"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.4.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-variation-settings:'opsz' 30;">GitHub</h3>
+        <p class="mt-2 small">Source code · issue tracker · contributions</p>
+      </a>
+      <a href="https://github.com/massimoaria/tall.language.models" target="_blank" rel="noopener" class="card fade-in fade-in-delay-2" style="text-decoration:none;">
+        <div style="width:42px; height:42px; border-radius: 8px; background: var(--tall-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 1rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tall-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9 9 9 0 019-9zM12 3v18M3 12h18M5.64 5.64l12.72 12.72M5.64 18.36l12.72-12.72"/></svg>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-variation-settings:'opsz' 30;">Language models</h3>
+        <p class="mt-2 small">87 pre‑trained UD v2.15 models · 56 languages</p>
+      </a>
+      <a href="https://www.k-synth.com/tall/TALL_tutorial.html" target="_blank" rel="noopener" class="card fade-in fade-in-delay-3" style="text-decoration:none;">
+        <div style="width:42px; height:42px; border-radius: 8px; background: var(--tall-soft); display:flex; align-items:center; justify-content:center; margin-bottom: 1rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--tall-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-variation-settings:'opsz' 30;">Tutorial</h3>
+        <p class="mt-2 small">200+ slide hands‑on walkthrough</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-tight" style="background: var(--paper-warm);">
   <div class="container text-center">
-    © 2025 K-Synth Srl, Academic Spin-Off of the University of Naples Federico II. All Rights Reserved.
+    <h2 class="display-md fade-in">Questions? <em class="italic-display" style="font-weight:400; color: var(--tall-deep)">Get in touch</em>.</h2>
+    <p class="lede mt-4 fade-in fade-in-delay-1" style="max-width: 40em; margin: 1rem auto 0;">
+      For bug reports, feature requests and contributions, use the GitHub issue tracker. For general inquiries, email the corresponding author.
+    </p>
+    <div class="flex gap-4 justify-center mt-8 fade-in fade-in-delay-2" style="flex-wrap: wrap;">
+      <a href="https://github.com/massimoaria/tall/issues" target="_blank" rel="noopener" class="btn btn-primary">GitHub issues</a>
+      <a href="mailto:aria@unina.it" class="btn btn-ghost">aria@unina.it</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-title">TALL</div>
+        <span class="footer-sub">Text Analysis for All · v1.0.0</span>
+        <p class="mt-6" style="color: rgba(250,247,239,.6); max-width: 28em; font-size: .92rem;">An open‑source R‑Shiny application developed by K‑Synth and academic partners, for reproducible text analytics without code.</p>
+      </div>
+      <div><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="tall-ai.html">TALL AI</a></li>
+        <li><a href="usecases.html">Use cases</a></li>
+        <li><a href="download.html">Install</a></li>
+      </ul></div>
+      <div><h4>Research</h4><ul>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="index.html#paper">Paper</a></li>
+        <li><a href="https://cran.r-project.org/package=tall" target="_blank" rel="noopener">CRAN</a></li>
+        <li><a href="https://github.com/massimoaria/tall" target="_blank" rel="noopener">GitHub</a></li>
+      </ul></div>
+      <div><h4>Team</h4><ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="mailto:aria@unina.it">Contact</a></li>
+        <li><a href="https://www.k-synth.com" target="_blank" rel="noopener">K‑Synth</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-meta">
+      <div>© 2026 K‑Synth Srl · Academic Spin‑Off of the University of Naples Federico&nbsp;II. Released under the MIT License.</div>
+      <div class="flex gap-4">
+        <a href="https://github.com/massimoaria/tall" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.4.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        </a>
+        <a href="mailto:aria@unina.it" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
 
-
-
-
-</body></html>
+<script src="js/main.js"></script>
+</body>
+</html>
